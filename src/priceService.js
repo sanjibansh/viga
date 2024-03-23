@@ -26,6 +26,8 @@ class PriceService {
         }
       }
 
+      //let distance = Integer.parseInt(distance);
+
       // Calculate total price
       const { base_distance_in_km, km_price, fix_price } = rows[0];
       let totalPrice = parseInt(fix_price) * 100;
@@ -34,10 +36,10 @@ class PriceService {
       }
 
       // Return the total price in euros
-      return totalPrice / 100 ; // Convert back to euros
+      return rows[0] ;//totalPrice / 100 ; // Convert back to euros
     } catch (error) {
       console.error("Error calculating price:", error);
-      return { error: "Internal server error" };
+      return { error: "Internal server error" + row };
     }
   }
 }
