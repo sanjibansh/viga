@@ -19,7 +19,7 @@ class PriceService {
       SELECT id FROM Item WHERE type = $3
     )
   `;
-  return [zone, organization_id, total_distance, type]
+  // return [zone, organization_id, total_distance, type]
    
       const { rows } = await pool.query(query, [organization_id, zone, type]);
       return rows[0]
