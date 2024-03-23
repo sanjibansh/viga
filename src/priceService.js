@@ -6,9 +6,9 @@ const connectionString = 'postgres://postgres:Password%4003@localhost:5432/postg
 class PriceService {
   async calculatePrice(zone, organization_id, total_distance, type) {
     try {
-      const pool = new Pool({
-        connectionString: connectionString,
-      });
+      // const pool = new Pool({
+      //   connectionString: connectionString,
+      // });
 
       // Fetch pricing details from the database
       const query = `
@@ -39,7 +39,7 @@ class PriceService {
       return rows[0] ;//totalPrice / 100 ; // Convert back to euros
     } catch (error) {
       console.error("Error calculating price:", error);
-      return { error: "Internal server error" + row };
+      return { error: "Internal server error"};
     }
   }
 }
