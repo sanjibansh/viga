@@ -19,14 +19,15 @@ class PriceService {
       SELECT id FROM Item WHERE type = $3
     )
   `;
-    return query;
+   
       const { rows } = await pool.query(query, [organization_id, zone, type]);
       return rows[0]
-      if (rows.length === 1) {
+      if (rows.length === 0) {
         return {
           error: "Pricing information not found for the given parameters",
         }
       }
+      return rows[0];
 
       //let distance = Integer.parseInt(distance);
 
