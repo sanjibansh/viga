@@ -11,6 +11,7 @@ class PriceService {
       // });
 
       // Fetch pricing details from the database
+      return 123;
       const query = `
     SELECT base_distance_in_km, km_price, fix_price
     FROM Pricing
