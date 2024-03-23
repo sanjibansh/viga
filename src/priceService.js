@@ -6,9 +6,9 @@ const connectionString = 'postgres://postgres:Password%4003@localhost:5432/postg
 class PriceService {
   async calculatePrice(zone, organization_id, total_distance, type) {
     try {
-      // const pool = new Pool({
-      //   connectionString: connectionString,
-      // });
+      const pool = new Pool({
+        connectionString: connectionString,
+      });
 
       // Fetch pricing details from the database
       return 123;
