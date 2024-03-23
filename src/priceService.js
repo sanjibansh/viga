@@ -11,7 +11,7 @@ class PriceService {
       });
 
       // Fetch pricing details from the database
-      return pool;
+     
       const query = `
     SELECT base_distance_in_km, km_price, fix_price
     FROM Pricing
@@ -19,6 +19,7 @@ class PriceService {
       SELECT id FROM Item WHERE type = $3
     )
   `;
+    return query;
       const { rows } = await pool.query(query, [organization_id, zone, type]);
       return rows[0]
       if (rows.length === 1) {
