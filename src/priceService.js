@@ -19,10 +19,10 @@ class PriceService {
     )
   `;
       const { rows } = await pool.query(query, [organization_id, zone, type]);
-
+      return rows[0]
       if (rows.length === 1) {
         return {
-          error: "Pricing information not found for the given parameters"+ rows[0],
+          error: "Pricing information not found for the given parameters",
         }
       }
 
