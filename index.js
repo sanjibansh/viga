@@ -17,11 +17,11 @@ app.use(bodyParser.json());
 // API endpoint to calculate delivery costs
 app.get('/', async (req, res) => {
   try {
-    //const { zone, organization_id, total_distance, type } = req.query;
-    const zone = req.query['param1'];
-    const organization_id=parseInt(req.query['param2']);
-    const total_distance=parseInt(req.query['param3']);
-    const type=req.query['param4'];
+    const { zone, organization_id, total_distance, type } = req.query;
+    // const zone = req.query['param1'];
+    // const organization_id=parseInt(req.query['param2']);
+    // const total_distance=parseInt(req.query['param3']);
+    // const type=req.query['param4'];
 
     //const { param1: zone, param2: organization_id, param3: total_distance, param4: type } = req.query;
     const totalPrice= await priceService.calculatePrice(zone,organization_id,total_distance,type);
