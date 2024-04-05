@@ -1,5 +1,4 @@
 
-//"express": "^4.18.3"  ojriginal express version
 // Import module
 const connectionString = require('./models/models');
 const PriceService = require('./src/priceService');
@@ -26,9 +25,6 @@ const bodyParser = require('body-parser');
 // Initialize Express app
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-// Middleware for parsing JSON bodies
-//app.use(bodyParser.json());
 
 /**
  * @swagger
@@ -75,7 +71,6 @@ const PORT = process.env.PORT || 3000;
  *                   description: The total price for the delivery.
  */
 app.put('/calculate-price', async (req, res) => {
-  // Implementation of the API endpoint
   try {
     const { zone, organization_id, total_distance, type } = req.query;
     const totalPrice= await priceService.calculatePrice(zone,organization_id,total_distance,type);
@@ -88,7 +83,7 @@ app.put('/calculate-price', async (req, res) => {
 });
 
 // Serve Swagger UI
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 // Start the server
 app.listen(PORT, () => {
