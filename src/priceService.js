@@ -1,7 +1,7 @@
 const { Pool } = require('pg');
 //const connectionString = require('./models/models');
-const connectionString = 'postgres://postgres:Password%4003@localhost:5432/postgres';
-//const connectionString = 'postgres://user_viga:h8CueJ9erUc4Nkj82RYiHUUUUo986Y2i@dpg-cnvvkpv79t8c73d862rg-a:5432/postgres_viga'
+//const connectionString = 'postgres://postgres:Password%4003@localhost:5432/postgres';
+const connectionString = 'postgres://user_viga:h8CueJ9erUc4Nkj82RYiHUUUUo986Y2i@dpg-cnvvkpv79t8c73d862rg-a:5432/postgres_viga'
 //postgres://user_viga:h8CueJ9erUc4Nkj82RYiHUUUUo986Y2i@dpg-cnvvkpv79t8c73d862rg-a.oregon-postgres.render.com/postgres_viga
 
 class PriceService {
