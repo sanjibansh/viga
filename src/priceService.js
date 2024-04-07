@@ -1,8 +1,5 @@
 const { Pool } = require('pg');
-//const connectionString = require('./models/models');
-//const connectionString = 'postgres://postgres:Password%4003@localhost:5432/postgres';
 const connectionString = 'postgres://user_viga:h8CueJ9erUc4Nkj82RYiHUUUUo986Y2i@dpg-cnvvkpv79t8c73d862rg-a:5432/postgres_viga'
-//postgres://user_viga:h8CueJ9erUc4Nkj82RYiHUUUUo986Y2i@dpg-cnvvkpv79t8c73d862rg-a.oregon-postgres.render.com/postgres_viga
 
 class PriceService {
   async calculatePrice(zone, organization_id, total_distance, type) {
@@ -41,8 +38,6 @@ class PriceService {
       if (total_distance1 > base_distance_in_km) {
         totalPrice += (total_distance - base_distance_in_km) * km_price * 100; // Convert to cents
       }
-      console.log('Parametersssssssssss:', [organization_id,total_distance1, zone, type, km_price1]);
-
 
       // Return the total price in euros
       return totalPrice / 100 ; // Convert back to euros
